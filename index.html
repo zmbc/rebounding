@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Rebounding</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/multirange.css">
+  <link rel="stylesheet" href="css/tip.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Rebounding</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="scatter">
+    </div>
+    <div id="controls" class="well">
+      <div id="color">
+        <h4>Color represents...</h4>
+        <label for="color-1994-95">
+          <input checked="checked" id="color-position" type='radio' class='color' name='color' value='Position'>
+          Position (<span class="coded-position">Guard</span>, <span class="coded-position">Forward</span>, <span class="coded coded-position">Center</span>)
+        </label>
+        <br/>
+        <label for="color-season">
+          <input id="color-season" type='radio' class='color' name='color' value='Season'>
+          Season (<span class="coded-season">1982-83</span>, <span class="coded-season">1994-95</span>, <span class="coded-season">2016-17</span>)
+        </label>
+      </div>
+      <div id="season">
+        <h4>Season</h4>
+        <label for="season-1982-83">
+          <input checked="checked" id="season-1982-83" type='checkbox' class='season' name='1982-83' value='1982-83'>
+          1982-83
+        </label>
+        <br/>
+        <label for="season-1994-95">
+          <input checked="checked" id="season-1994-95" type='checkbox' class='season' name='1994-95' value='1994-95'>
+          1994-95
+        </label>
+        <br/>
+        <label for="season-2016-17">
+          <input checked="checked" id="season-2016-17" type='checkbox' class='season' name='2016-17' value='2016-17'>
+          2016-17
+        </label>
+      </div>
+      <div id="position">
+        <h4>Position</h4>
+        <label for="position-guard">
+          <input checked="checked" id="position-guard" type='checkbox' class='position' name='Guard' value='Guard'>
+          Guard
+        </label>
+        <br/>
+        <label for="position-forward">
+          <input checked="checked" id="position-forward" type='checkbox' class='position' name='Forward' value='Forward'>
+          Forward
+        </label>
+        <br/>
+        <label for="position-center">
+          <input checked="checked" id="position-center" type='checkbox' class='position' name='Center' value='Center'>
+          Center
+        </label>
+      </div>
+      <div id="usage">
+        <h4>Usage</h4>
+        <label for='usage-range' style="position:relative;">
+          <input id="usage-range" type='range' class='usage' name='usage-range' min="0" max="50" step="0.5" multiple value="0,50">
+          Usage % between <span id="usage-min"></span> and <span id="usage-max"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <script
+			  src="https://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
+  <script src="js/multirange.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
