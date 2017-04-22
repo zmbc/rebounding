@@ -85,6 +85,95 @@
         </div>
       </div>
     </div>
+    <div id="explanation" class="col-xs-12 col-sm-8 col-md-6 center-block">
+      <h3>Visual Encodings</h3>
+      <p>
+        Rebounding falls into two major categories, offensive and defensive, so
+        I chose measures of those two categories for the two position encodings
+        (specifically <abbr title="Percentage of possible offensive rebounds the player got">ORB%</abbr>
+        and <abbr title="Percentage of possible defensive rebounds the player got">DRB%</abbr>).
+        Since the two are correlated, these two position encodings create
+        a direction encoding that shows the strength of the correlation. There is
+        also somewhat of a phantom length encoding: a player's diagonal distance from the
+        imaginary trendline represents the extent to which that player is more
+        offensive-rebounding focused or defensive-rebounding focused (for example,
+        Kevin Durant sticks out as a particularly defensive-rebounding focused
+        forward).
+      </p>
+      <p>
+        Unfortunately, the expressiveness of this visualization is impacted by
+        occlusion. The use of a lowered opacity mostly mitigates this problem,
+        but the guards of the NBA are so similar in their (lack of) rebounding
+        that they can't be separated when viewed alongside forwards and centers.
+        This reduces the ability to ask specific questions about them, but they
+        still contribute to the overall direction encoding.
+      </p>
+      <h3>Control Elements</h3>
+      <h4>Color Encoding</h4>
+      <p>
+        The purpose of the color encoding is to make comparisons between colors, not
+        to look for patterns within colored groups (that's what filtering is for).
+        Looking at the rebounding data, the two comparisons I was most curious about
+        were between positions and between "eras" (approximated here by
+        <abbr title="1982-83 during the 'Bird and Magic era,' 1994-95 during the 'MJ/90s era,' and 2016-17 during the modern era">three selected seasons</abbr>).
+        For this reason, the user can choose which of these is encoded as color.
+      </p>
+      <h4>Season &amp; Position Filter</h4>
+      <p>
+        Because the color encoding can be either one of these, they both serve the
+        same two purposes:
+        <ul>
+          <li>
+            When they're not the color encoding, the filters act as a way to
+            scope the comparison. Instead of comparing guards to forwards overall,
+            for instance, the season filter allows a user to compare guards to
+            forwards only in the 2016-17 season.
+          </li>
+          <li>
+            When they are the color encoding, the filters allow point-to-point
+            comparison between any two items. For instance, instead of looking
+            at the overall difference between positions, the position filter
+            allows a user to compare forwards to centers specifically.
+          </li>
+        </ul>
+        A few discoveries I made using these filters:
+        <ul>
+          <li>
+            Comparing guards across the seasons, it seems that modern guards
+            are significantly more defensive-rebounding focused than guards of
+            the past (even without outlier Russell Westbrook, though he is an
+            extreme example of this). The same trend looks to be somewhat true
+            of other positions, but the effect is far larger on guards.
+          </li>
+          <li>
+            In the 1994-95 season, forwards and centers are pretty indistinguishable
+            among the best rebounders (again, this is even true when excluding
+            the outlier Dennis Rodman). There were plenty of forwards who didn't
+            rebound well in that season, but the best forwards were just as good as
+            or better than centers. In other seasons, while there is considerable
+            overlap, the top rebounders are mostly centers.
+          </li>
+        </ul>
+      </p>
+      <h4>Usage Filter</h4>
+      <p>
+        Although rebounding is interesting on its own, I also wanted users to be
+        able to filter by a non-rebounding-related factor. I chose
+        <abbr title="Percentage of plays 'used' (e.g. by shooting or turning over the ball) by a player while they're on the floor">usage percentage</abbr>
+        because it measures the amount of non-rebounding "work" the player has to do,
+        as well as being a good proxy for star-ness (set the minimum usage to 28%
+        and an NBA fan will recognize nearly all of the names).
+      </p>
+      <p>
+        At a first glance at the data, it's easy to dismiss Russell Westbrook's
+        rebounding (and by extension his <a href="http://www.basketball-reference.com/players/w/westbru01.html">triple-double average</a>)
+        as a meaningless artifact due to the highly unusual defensive-to-offensive rebounding ratio.
+        However, when the minimum usage is set to 25%, it becomes clear that
+        for a guard with superstar levels of offensive workload, Westbrook's
+        <strong>offensive</strong> rebounding rate is also one of the best of
+        all time.
+      </p>
+    </div>
   </div>
   <script
 			  src="https://code.jquery.com/jquery-3.2.1.js"
