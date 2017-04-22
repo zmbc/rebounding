@@ -1,18 +1,33 @@
 /* Room for the navbar */
 body { padding-top: 70px; }
 
-#controls {
-  width: 33%;
-  float: right;
-}
-
 .d3-tip {
   text-align: center;
   border-radius: 7px;
 }
 
-#scatter {
-  max-height: 700px;
-  width: 66%;
-  float: left;
+#chart-and-controls-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#chart-container, #controls {
+  flex: 1 100%;
+}
+
+/* Large screens */
+@media all and (min-width: 700px) {
+   #chart-container {
+     flex: 2 66%;
+   }
+
+   #controls {
+     flex: 1 33%;
+   }
+}
+
+#explanation {
+  padding: 40px 0;
+  float: none;
 }

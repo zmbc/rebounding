@@ -11,15 +11,16 @@ $(function() {
   var drawHeight = height - margin.top - margin.bottom;
   var drawWidth = width - margin.left - margin.right;
 
-  var div = d3.select('#scatter');
+  var div = d3.select('#chart-container');
 
   var svg = div.append("svg")
       .style('width', '100%')
+      .style('height', 'auto')
       .style('max-height', '700px')
       .attr('height', height)
       .attr('width', width)
       .attr('viewBox', '0 0 ' + width + ' ' + height)
-      .attr('preserveAspectRatio', 'xMidYMin meet');
+      .attr('preserveAspectRatio', 'xMidYMid meet');
 
   var drawArea = svg.append('g')
       .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
