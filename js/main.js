@@ -123,11 +123,11 @@ $(function() {
     // Maxes multipled by 1.1 for some dynamic headroom.
     // Mins have static amount of headroom because min values are often
     // very close to 0 in this dataset.
-    var xMin = d3.min(data, function(d) {return +d['DRB%'];}) - 1;
-    var xMax = d3.max(data, function(d) {return +d['DRB%'];}) * 1.1;
+    var xMin = (d3.min(data, function(d) {return +d['DRB%'];}) || 0) - 1;
+    var xMax = (d3.max(data, function(d) {return +d['DRB%'];}) || 30) * 1.1;
 
-    var yMin = d3.min(data, function(d) {return +d['ORB%'];}) - 1;
-    var yMax = d3.max(data, function(d) {return +d['ORB%'];}) * 1.1;
+    var yMin = (d3.min(data, function(d) {return +d['ORB%'];}) || 0) - 1;
+    var yMax = (d3.max(data, function(d) {return +d['ORB%'];}) || 30) * 1.1;
 
     var xScale = d3.scaleLinear()
       .domain([xMin, xMax])
