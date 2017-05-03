@@ -83,10 +83,8 @@ $(function() {
       return;
     }
 
-    $('input.season, input.position, input[name=color]').on('input', filterAndEncodeData);
-
     // For range inputs, 'change' only fires when the slider is released
-    $('.usage').on('change', filterAndEncodeData);
+    $('input.season, input.position, input[name=color], .usage').on('change', filterAndEncodeData);
 
     function filterAndEncodeData() {
       // Shallow-copy OK because filtering just removes references, doesn't
